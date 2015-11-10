@@ -22,7 +22,8 @@ public class BubbleSort {
 		 }	
 	}
 	
-	void bubbleSort(ArrayList<Integer> list){
+	
+	void bubbleSort(ArrayList<Integer> list){ //ascending order
 		int tmp;
 		int[] array = new int[list.size()];
 		
@@ -48,6 +49,7 @@ public class BubbleSort {
 		
 	}
 	
+	
 	void print(ArrayList<Integer> list){
 		for(int i = 0; i < list.size(); i++){
 			System.out.print(list.get(i) + " ");
@@ -55,10 +57,18 @@ public class BubbleSort {
 		System.out.println();
 	}
 	
+	
 	public static void main(String[] args){
 		BubbleSort process = new BubbleSort();
 		process.input(args[0]);
+		
+		long start = System.currentTimeMillis();
+		
 		process.bubbleSort(list);
+		
+		long end = System.currentTimeMillis();
+		System.out.println("Time:" + (end - start) / 1000000f + "ms");
+		
 		process.print(list);
 	}
 }
