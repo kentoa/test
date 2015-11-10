@@ -22,14 +22,17 @@ public class BubbleSort {
 		 }	
 	}
 	
-	
-	void bubbleSort(ArrayList<Integer> list){ //ascending order
-		int tmp;
+	int[] toArray(ArrayList<Integer> list){
 		int[] array = new int[list.size()];
 		
 		for(int i = 0; i < list.size(); i++){
 			array[i] = list.get(i);
 		}
+		return array;
+	}
+	
+	int[] bubbleSort(int[] array){ //ascending order
+		int tmp;
 		
 		for(int i = 0; i < array.length; i++){
 			for(int j = array.length - 1; i < j; j--){
@@ -40,19 +43,13 @@ public class BubbleSort {
 				}
 			}
 		}
-		
-		list.clear();
-		
-		for(int i = 0; i < array.length; i++){
-			list.add(array[i]);
-		}
-		
+		return array;
 	}
 	
 	
-	void print(ArrayList<Integer> list){
-		for(int i = 0; i < list.size(); i++){
-			System.out.print(list.get(i) + " ");
+	void print(int[] array){
+		for(int i = 0; i < array.length; i++){
+			System.out.print(array[i] + " ");
 		}
 		System.out.println();
 	}
@@ -62,13 +59,15 @@ public class BubbleSort {
 		BubbleSort process = new BubbleSort();
 		process.input(args[0]);
 		
+		int[] array = process.toArray(list);
+		
 		long start = System.currentTimeMillis();
 		
-		process.bubbleSort(list);
+		int[] result = process.bubbleSort(array);
 		
 		long end = System.currentTimeMillis();
 		System.out.println("Time:" + (end - start) / 1000000f + "ms");
 		
-		process.print(list);
+		process.print(result);
 	}
 }
