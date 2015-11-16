@@ -14,7 +14,7 @@ public class MonteCarlo {
 			x[i] = r.nextDouble(); //generate points
 			y[i] = r.nextDouble();
 			
-			dist = Math.sqrt(Math.pow(x[i], 2) + Math.pow(y[i], 2));
+			dist = Math.pow(x[i], 2) + Math.pow(y[i], 2);
 			
 			if(dist < 1){
 				count++;
