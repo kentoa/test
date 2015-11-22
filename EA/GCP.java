@@ -1,6 +1,5 @@
 import java.util.Random;
 
-
 public class GCP { //グラフ色塗り問題(Graph Coloring Problem)
 	static long[] seed = {149, 151, 157, 161, 163, 167, 173, 179, 181, 191};
 	static int N = 9; //ノード数(3の倍数)
